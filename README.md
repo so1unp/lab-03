@@ -14,7 +14,7 @@ Completar el programa `fork.c` para que cree *n* procesos hijos, utilizando la l
 * Cada proceso debe esperar un número aleatorio de segundos, no mayor a 10, antes de terminar. Para que el proceso se suspenda ese número de segundos, utilizar la función [`sleep()`](http://man7.org/linux/man-pages/man3/sleep.3.html).
 * Cada proceso hijo debe finalizar con la llamada al sistema [`exit()`](http://man7.org/linux/man-pages/man2/exit.3.html). Como parámetro debe utilizar el número de segundos que espero.
 * El proceso padre debe esperar a que todos sus procesos hijos finalicen. Utilizar la llamada al sistema [`waitpid()`](http://man7.org/linux/man-pages/man2/waitpid.2.html) para esperar a que los procesos hijos terminen.
-* El proceso padre debe imprimir cuantos segundos durmió cada proceso hijo.
+* El proceso padre debe imprimir cuantos segundos durmió cada proceso hijo. Este dato se obtiene mediante `waitpid()`.
 
 Por ejemplo, si se ejecuta el programa indicando que se creen 3 procesos hijo, debe obtenerse una salida similar a la siguiente:
 
