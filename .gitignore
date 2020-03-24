@@ -51,6 +51,11 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# PDF, HTML
+*.pdf
+*.html
+*.htm
+
 # Backup files
 *~
 
