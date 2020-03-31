@@ -4,9 +4,29 @@ En este laboratorio vamos a ver las llamadas al sistema para crear y terminar pr
 
 _Nota_: las respuestas a las preguntas en los ejercicios pueden incluirlas en un archivo de texto con el nombre `respuestas.txt`.
 
-## Ejercicio 1: Crear procesos
+## Ejercicio 1: Crear procesos (sencillo)
 
-Completar el programa `fork.c` para que cree *n* procesos hijos, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html).
+El programa `fork.c` debe recibir como parámetros el nombre de un archivo, seguido de dos mensajes:
+
+```sh
+$ bin/fork hola.txt mensaje1 mensaje2
+```
+
+El programa debe abrir el archivo indicado (crearlo si no existe, con permisos `0644`). Luego, debe crear un proceso hijo que escriba en el archivo el primer mensaje. Una vez que finalice el hijo, el padre debe escribir el segundo mensaje en el archivo.
+
+Una ejecución de ejemplo sería:
+
+```sh
+$ bin/fork hola.txt mensaje1 mensaje2
+$ cat hola.txt
+Hijo: mensaje1
+Padre: mensaje2
+$
+```
+
+## Ejercicio 2: Crear procesos (más complicado)
+
+Completar el programa `mfork.c` para que cree *n* procesos hijos, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html).
 
 * El número *n* debe ser indicado como parámetro en la línea de comandos.
 * Cada proceso hijo debe tener asignado un _id_ único, que es un número entero. El primer hijo creado debe tener el _id_ 1, el segundo el _id_ 2 y así sucesivamente.
@@ -19,18 +39,18 @@ Completar el programa `fork.c` para que cree *n* procesos hijos, utilizando la l
 Por ejemplo, si se ejecuta el programa indicando que se creen 3 procesos hijo, debe obtenerse una salida similar a la siguiente:
 
 ```bash
-$ ./fork 3
+$ bin/mfork 3
 Hijo 3431: id 1
 Hijo 3434: id 2
 Hijo 3432: id 3
-fork: todos los hijos terminaron.
+mfork: todos los hijos terminaron.
 Hijo 1 durmió 4 segundos.
 Hijo 2 durmió 2 segundos.
 Hijo 3 durmió 7 segundos.
 $
 ```
 
-## Ejercicio 2: Ejecutar programas
+## Ejercicio 3: Ejecutar programas
 
 Completar el programa `exec.c` para que, creando un proceso hijo, ejecute el programa indicado, utilizando la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Por ejemplo:
 
@@ -42,7 +62,7 @@ Debe ejecutar el comando `ls -lh`. El proceso padre debe esperar a que termine d
 
 _Bonus_: imprimir el resultado retornado por la ejecución del programa indicado por el usuario, y si es posible si finalizo correctamente o mediante un error.
 
-## Ejercicio 3: Interprete de comandos
+## Ejercicio 4: Interprete de comandos
 
 En esta parte del laboratorio se implementarán varias funcionalidades intérprete de comandos del archivo `sh.c` (tomado del curso _6.828 Operating Systems Engineering_ del MIT).
 

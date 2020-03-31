@@ -1,5 +1,5 @@
 //
-// Laboratorio 3 -- Ejercicio 3
+// Laboratorio 3 -- Ejercicio 2
 //
 
 #include <stdio.h>
