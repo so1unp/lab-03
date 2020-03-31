@@ -6,13 +6,13 @@ _Nota_: las respuestas a las preguntas en los ejercicios pueden incluirlas en un
 
 ## Ejercicio 1: Crear procesos (sencillo)
 
-El programa `fork.c` debe recibir como parámetros el nombre de un archivo, seguido de dos mensajes:
+El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un archivo, seguido de dos mensajes:
 
 ```sh
 $ bin/fork hola.txt mensaje1 mensaje2
 ```
 
-El programa debe abrir el archivo indicado (crearlo si no existe, con permisos `0644`). Luego, debe crear un proceso hijo que escriba en el archivo el primer mensaje. Una vez que finalice el hijo, el padre debe escribir el segundo mensaje en el archivo.
+El programa debe abrir el archivo indicado (crearlo si no existe, con permisos `0644`). Luego, debe crear un proceso hijo que escriba en el archivo el primer mensaje. Utilizar la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html). El padre debe esperar a que finalice la ejecución del proceso hijo y escribir el segundo mensaje en el archivo. Usar la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html).
 
 Una ejecución de ejemplo sería:
 
@@ -26,7 +26,7 @@ $
 
 ## Ejercicio 2: Crear procesos (más complicado)
 
-Completar el programa `mfork.c` para que cree *n* procesos hijos, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html).
+Completar el programa `mfork.c` para que cree *n* procesos hijos:
 
 * El número *n* debe ser indicado como parámetro en la línea de comandos.
 * Cada proceso hijo debe tener asignado un _id_ único, que es un número entero. El primer hijo creado debe tener el _id_ 1, el segundo el _id_ 2 y así sucesivamente.
