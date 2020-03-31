@@ -26,7 +26,7 @@ $
 
 ## Ejercicio 2: Crear procesos (más complicado)
 
-Completar el programa `mfork.c` para que cree *n* procesos hijos:
+Completar el programa [`mfork.c`](mfork.c) para que cree *n* procesos hijos:
 
 * El número *n* debe ser indicado como parámetro en la línea de comandos.
 * Cada proceso hijo debe tener asignado un _id_ único, que es un número entero. El primer hijo creado debe tener el _id_ 1, el segundo el _id_ 2 y así sucesivamente.
@@ -52,7 +52,7 @@ $
 
 ## Ejercicio 3: Ejecutar programas
 
-Completar el programa `exec.c` para que, creando un proceso hijo, ejecute el programa indicado, utilizando la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Por ejemplo:
+Completar el programa [`exec.c`](exec.c) para que, creando un proceso hijo, ejecute el programa indicado, utilizando la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Por ejemplo:
 
 ```sh
 $ bin/exec ls -lh
@@ -64,7 +64,7 @@ _Bonus_: imprimir el resultado retornado por la ejecución del programa indicado
 
 ## Ejercicio 4: Interprete de comandos
 
-En esta parte del laboratorio se implementarán varias funcionalidades intérprete de comandos del archivo `sh.c` (tomado del curso _6.828 Operating Systems Engineering_ del MIT).
+En esta parte del laboratorio se implementarán varias funcionalidades intérprete de comandos del archivo [`sh.c`](sh.c) (tomado del curso [_6.828 Operating Systems Engineering_](https://pdos.csail.mit.edu/6.828/) del MIT).
 
 ### Ejecución de comandos
 
