@@ -4,7 +4,7 @@ En este laboratorio vamos a ver las llamadas al sistema para crear y terminar pr
 
 _Nota_: las respuestas a las preguntas en los ejercicios pueden incluirlas en un archivo de texto con el nombre `respuestas.txt`.
 
-## Ejercicio 1 - Crear procesos
+## Ejercicio 1: Crear procesos
 
 Completar el programa `fork.c` para que cree *n* procesos hijos, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html).
 
@@ -30,19 +30,21 @@ Hijo 3 durmió 7 segundos.
 $
 ```
 
-## Ejercicio 2 - Ejecutar programas
+## Ejercicio 2: Ejecutar programas
 
 Completar el programa `exec.c` para que, creando un proceso hijo, ejecute el programa indicado, utilizando la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Por ejemplo:
+
+```sh
+$ bin/exec ls -lh
 ```
-$./exec ls -lh
-```
+
 Debe ejecutar el comando `ls -lh`. El proceso padre debe esperar a que termine de ejecutar el comando indicado.
 
 _Bonus_: imprimir el resultado retornado por la ejecución del programa indicado por el usuario, y si es posible si finalizo correctamente o mediante un error.
 
-## Ejercicio 3 - Interprete de comandos
+## Ejercicio 3: Interprete de comandos
 
-En esta parte del laboratorio se implementarán varias funcionalidades al `shell 6.828`, del curso _6.828 Operating Systems Engineering_ del MIT. El código del intérprete lo pueden encontrar en el archivo `sh.c`.
+En esta parte del laboratorio se implementarán varias funcionalidades intérprete de comandos del archivo `sh.c` (tomado del curso _6.828 Operating Systems Engineering_ del MIT).
 
 ### Ejecución de comandos
 
