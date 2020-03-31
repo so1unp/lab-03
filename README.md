@@ -60,7 +60,7 @@ $ bin/exec ls -lh
 
 Debe ejecutar el comando `ls -lh`. El proceso padre debe esperar a que termine de ejecutar el comando indicado.
 
-_Bonus_: imprimir el resultado retornado por la ejecución del programa indicado por el usuario, y si es posible si finalizo correctamente o mediante un error.
+Imprimir el resultado retornado por la ejecución del programa indicado por el usuario y si es posible si finalizo correctamente o mediante un error.
 
 ## Ejercicio 4: Interprete de comandos
 
