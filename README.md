@@ -2,9 +2,9 @@
 
 En este laboratorio vamos a ver las llamadas al sistema para crear y terminar procesos, y para ejecutar un nuevo programa desde un proceso.
 
-_Nota_: las respuestas a las preguntas en los ejercicios pueden incluirlas en un archivo de texto con el nombre `respuestas.txt`.
+:bulb: Las respuestas a las preguntas en los ejercicios pueden incluirlas en un archivo de texto con el nombre `respuestas.txt`.
 
-:calendar: Fecha de entrega: 09/04
+:date: Fecha de entrega: 09/04
 
 ## Ejercicio 1: Crear procesos (sencillo)
 
@@ -88,3 +88,4 @@ El parser implementado en el shell ya reconoce estos operadores, y genera una es
 ---
 
 ¡Fin del Laboratorio 3!
+
