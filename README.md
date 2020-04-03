@@ -4,6 +4,8 @@ En este laboratorio vamos a ver las llamadas al sistema para crear y terminar pr
 
 _Nota_: las respuestas a las preguntas en los ejercicios pueden incluirlas en un archivo de texto con el nombre `respuestas.txt`.
 
+:calendar: Fecha de entrega: 09/04
+
 ## Ejercicio 1: Crear procesos (sencillo)
 
 El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un archivo, seguido de dos mensajes:
