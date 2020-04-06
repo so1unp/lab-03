@@ -66,11 +66,11 @@ Imprimir el resultado retornado por la ejecución del programa indicado por el u
 
 ## Ejercicio 4: Interprete de comandos
 
-En esta parte del laboratorio se implementarán varias funcionalidades intérprete de comandos del archivo [`sh.c`](sh.c) (tomado del curso [_6.828 Operating Systems Engineering_](https://pdos.csail.mit.edu/6.828/) del MIT).
+En esta parte del laboratorio se agregan varias funcionalidades al intérprete de comandos [`sh.c`](sh.c) (tomado del curso [_6.828 Operating Systems Engineering_](https://pdos.csail.mit.edu/6.828/) del MIT).
 
 ### Ejecución de comandos
 
-Implementar la ejecución de comandos, por ejemplo `ls`. El parser genera una estructura `execcmd` que contiene el comando a ejecutar y los parámetros que se le hayan indicado. Deben completar el caso `' '` en la función `runcmd`. Para ejecutar el comando, utilizar la llamada a sistema [`execv()`](http://man7.org/linux/man-pages/man3/exec.3.html). Se debe imprimir un mensaje de error si `execv()` falla, utilizando la función [`perror()`](http://man7.org/linux/man-pages/man3/perror.3.html).
+Implementar la ejecución de comandos. El parser del intérprete ya genera una estructura `execcmd` que contiene el comando a ejecutar y los parámetros que se le hayan indicado. Deben completar el caso `' '` en la función `runcmd()`. Para ejecutar el comando, utilizar la llamada a sistema [`execv()`](http://man7.org/linux/man-pages/man3/exec.3.html). Se debe imprimir un mensaje de error si `execv()` falla, utilizando la función [`perror()`](http://man7.org/linux/man-pages/man3/perror.3.html).
 
 ### Redirección de E/S
 
@@ -96,6 +96,10 @@ $
 ```
 
 El parser ya reconoce el operador `|` y guarda en la estructura `pipecmd` todos los datos requeridos para conectar dos procesos mediante una tubería. Deben agregar el código necesario en la función `runcmd()`. Las llamadas al sistema que deben utilizar son [`pipe()`](http://man7.org/linux/man-pages/man2/pipe.2.html), [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html), [`close()`](http://man7.org/linux/man-pages/man2/close.2.html) y [`dup()`](http://man7.org/linux/man-pages/man2/dup.2.html).
+
+## Ejercicio 5: getppid() en xv6
+
+Añadir a _xv6_ la llamada al sistema `getppid()`. Estudiar cómo esta implementada la llamada al sistema `getpid()` como guía. Incluir en el archivo `respuestas.txt` una explicación de cómo se implementa la nueva llamada al sistema.
 
 ---
 
