@@ -60,10 +60,10 @@ hijo, debe obtenerse una salida similar a la siguiente:
     Hijo 3431: id 1
     Hijo 3434: id 2
     Hijo 3432: id 3
-    mfork: todos los hijos terminaron.
     Hijo 1 durmió 4 segundos.
     Hijo 2 durmió 2 segundos.
     Hijo 3 durmió 7 segundos.
+    mfork: todos los hijos terminaron.
     $
 
 Ejercicio 3: Ejecutar programas
