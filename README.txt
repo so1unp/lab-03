@@ -87,7 +87,7 @@ En esta parte del laboratorio se agregan varias funcionalidades al
 intérprete de comandos sh.c (tomado del curso 6.828 Operating Systems
 Engineering del MIT).
 
-Ejecución de comandos
+4.1: Ejecución de comandos
 
 Implementar la ejecución de comandos. El parser del intérprete ya genera
 una estructura execcmd que contiene el comando a ejecutar y los
@@ -96,7 +96,7 @@ función runcmd(). Para ejecutar el comando, utilizar la llamada a
 sistema execv(). Se debe imprimir un mensaje de error si execv() falla,
 utilizando la función perror().
 
-Redirección de E/S
+4.1: Redirección de E/S
 
 Implementar redirección de E/S mediante los operadores < y >, de manera
 que el shell permita ejecutar comandos como:
@@ -113,7 +113,7 @@ runcmd(). Consultar las llamadas al sistema open() y close(). Imprimir
 un mensaje de error si alguna de las llamadas al sistema empleadas falla
 con perror(). Verificar los permisos con los que se crea el archivo.
 
-Tuberías (pipes)
+4.1: Tuberías (pipes)
 
 Implementar soporte para el uso de tuberías (pipes), para poder ejecutar
 un comando como:
@@ -130,10 +130,9 @@ dup().
 
 Ejercicio 5: getppid() en xv6
 
-Añadir a xv6 la llamada al sistema getppid(). Estudiar cómo esta
-implementada la llamada al sistema getpid() como guía. Incluir en el
-archivo respuestas.txt una explicación de cómo se implementa la nueva
-llamada al sistema.
+Añadir a xv6 la llamada al sistema getppid(). Utilizar como guía la
+llamada al sistema getpid(). Incluir en el archivo respuestas.txt una
+explicación de cómo se implemento la nueva llamada al sistema.
 
 ------------------------------------------------------------------------
 
