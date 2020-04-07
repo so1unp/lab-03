@@ -99,7 +99,9 @@ El parser ya reconoce el operador `|` y guarda en la estructura `pipecmd` todos 
 
 ## Ejercicio 5: getppid() en xv6
 
-Añadir a _xv6_ la llamada al sistema `getppid()`. Utilizar como guía la llamada al sistema `getpid()`. Incluir en el archivo `respuestas.txt` una explicación de cómo se implemento la nueva llamada al sistema.
+Añadir a _xv6_ la llamada al sistema `getppid()`. Utilizar como guía la llamada al sistema `getpid()`. Agregar también un programa con el que se pruebe el funcionamiento de la llamada al sistema.
+
+Incluir en el archivo `respuestas.txt` una explicación de cómo se implemento la nueva llamada al sistema.
 
 ---
 

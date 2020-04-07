@@ -131,8 +131,11 @@ dup().
 Ejercicio 5: getppid() en xv6
 
 Añadir a xv6 la llamada al sistema getppid(). Utilizar como guía la
-llamada al sistema getpid(). Incluir en el archivo respuestas.txt una
-explicación de cómo se implemento la nueva llamada al sistema.
+llamada al sistema getpid(). Agregar también un programa con el que se
+pruebe el funcionamiento de la llamada al sistema.
+
+Incluir en el archivo respuestas.txt una explicación de cómo se
+implemento la nueva llamada al sistema.
 
 ------------------------------------------------------------------------
 
