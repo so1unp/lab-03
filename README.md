@@ -4,7 +4,7 @@ En este laboratorio vamos a ver las llamadas al sistema para crear y terminar pr
 
 :bulb: Las respuestas a las preguntas en los ejercicios pueden incluirlas en un archivo de texto con el nombre `respuestas.txt`.
 
-:date: Fecha de entrega: 09/04
+:date: Fecha de entrega: 16/04
 
 ## Ejercicio 1: Crear procesos (sencillo)
 
