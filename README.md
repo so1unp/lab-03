@@ -1,20 +1,20 @@
 # Laboratorio 3 - Procesos
 
-En este laboratorio vamos a ver las llamadas al sistema para crear y terminar procesos, y para ejecutar un nuevo programa desde un proceso.
+En este laboratorio vamos a ver las llamadas al sistema relacionadas con procesos.
 
-:bulb: Las respuestas a las preguntas en los ejercicios pueden incluirlas en un archivo de texto con el nombre `respuestas.txt`.
+:bulb: Incluir las respuestas a las preguntas de los ejercicios en un archivo de texto con el nombre `respuestas.txt`.
 
 :date: Fecha de entrega: 16/04
 
-## Ejercicio 1: Crear procesos (sencillo)
+## Ejercicio 1: Crear un proceso
 
-El programa [`fork.c`](fork.c) debe recibir tres parámetros: el nombre de un archivo y dos cadenas:
+El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un archivo y dos cadenas:
 
 ```sh
 $ bin/fork hola.txt cadena1 cadena2
 ```
 
-El programa debe abrir el archivo indicado o crearlo si no existe (con permisos `0644`), en modo `O_APPEND`. Luego, debe crear un proceso hijo que escriba en el archivo la primer cadena. Utilizar la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html). El proceso padre debe esperar a que finalice la ejecución del proceso hijo y escribir entonces la segunda cadena en el archivo. Usar la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html).
+El programa debe abrir el archivo indicado (o crearlo si no existe, con permisos `0644`) en modo `O_APPEND`. Luego, debe crear un proceso hijo que escriba en el archivo la primer cadena. Utilizar para esto la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html). El proceso padre debe esperar a que el proceso hijo finalice y luego escribir la segunda cadena en el archivo. Usar la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) para esperar la finalización del proceso hijo.
 
 Una ejecución de ejemplo sería:
 
@@ -26,7 +26,7 @@ Padre: cadena2
 $
 ```
 
-## Ejercicio 2: Crear procesos (más complicado)
+## Ejercicio 2: Crear multiples procesos
 
 Completar el programa [`mfork.c`](mfork.c) para que cree *n* procesos hijos:
 
@@ -52,9 +52,9 @@ mfork: todos los hijos terminaron.
 $
 ```
 
-## Ejercicio 3: Ejecutar programas
+## Ejercicio 3: Ejecutar un programa
 
-Completar el programa [`exec.c`](exec.c) para que, creando un proceso hijo, ejecute el programa indicado, utilizando la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Por ejemplo:
+Completar el programa [`exec.c`](exec.c) para que, desde un proceso hijo, ejecute el programa indicado. Para esto, utilizar la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Por ejemplo:
 
 ```sh
 $ bin/exec ls -lh
@@ -62,7 +62,7 @@ $ bin/exec ls -lh
 
 Debe ejecutar el comando `ls -lh`. El proceso padre debe esperar a que termine de ejecutar el comando indicado.
 
-Imprimir el resultado retornado por la ejecución del programa indicado por el usuario y si es posible si finalizo correctamente o mediante un error.
+El proceso padre debe imprimir el resultado retornado por la ejecución del programa indicado por el usuario y si es posible si finalizo correctamente o mediante un error.
 
 ## Ejercicio 4: Interprete de comandos
 
