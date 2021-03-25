@@ -2,7 +2,7 @@ CC=gcc
 BIN=./bin
 CFLAGS=-Wall -g
 
-PROG=fork exec sh
+PROG=fork mfork exec sh
 
 LIST=$(addprefix $(BIN)/, $(PROG))
 
@@ -17,4 +17,4 @@ $(BIN)/%: %.c
 
 .PHONY: clean
 clean:
-	rm -f $(BIN)/ej* $(BIN)/hola $(BIN)/sh
+	rm $(LIST)
