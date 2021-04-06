@@ -1,6 +1,6 @@
 CC=gcc
 BIN=./bin
-CFLAGS=-Wall -g
+CFLAGS=-Wall -Werror -g
 
 PROG=fork mfork exec sh
 
