@@ -20,4 +20,4 @@ check:
 
 .PHONY: clean
 clean:
-	rm $(LIST)
+	rm -f $(LIST)

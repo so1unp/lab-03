@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -f "bin/fork" ]; then
+    printf "bin/fork no esta compilado.\n"
+    exit 1
+fi
+
 printf "Testing: bin/fork test.txt hola mundo\n"
 
 bin/fork test.txt hola mundo > /dev/null
