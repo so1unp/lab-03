@@ -41,8 +41,7 @@ debe crear 3 procesos hijos, que duermen 3, 5 y 8 segundos respectivamente. El p
 * Cada proceso hijo debe tener asignado un entero _id_ único. El primer hijo creado debe tener el _id_ 1, el segundo el _id_ 2 y así sucesivamente.
 * Cada proceso hijo debe imprimir por la salida estándar: `"%d: id %d, duermo %d segundos\n"`, indicando el *identificador del proceso* (PID), el _id_ y cuantos segundos va a dormir. Para obtener el PID usar la llamada al sistema [`getpid()`](http://man7.org/linux/man-pages/man2/getpid.2.html).
 * Para que el proceso se suspenda el número de segundos indicado, utilizar la función [`sleep()`](http://man7.org/linux/man-pages/man3/sleep.3.html).
-* El proceso padre debe esperar a que todos sus procesos hijos finalicen. Utilizar la llamada al sistema [`waitpid()`](http://man7.org/linux/man-pages/man2/waitpid.2.html) para esperar a que los procesos hijos terminen.
-* El proceso padre debe imprimir cuantos segundos durmió cada proceso hijo. Este dato se obtiene mediante `waitpid()`.
+* El proceso padre debe esperar a que todos sus procesos hijos finalicen e imprimir un mensaje. Utilizar la llamada al sistema [`waitpid()`](http://man7.org/linux/man-pages/man2/waitpid.2.html) para esperar a que los procesos hijos terminen.
 
 El resultado tendría que ser el siguiente:
 
