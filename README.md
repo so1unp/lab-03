@@ -30,29 +30,32 @@ Ejecutar `make check` para verificar la solución.
 
 ## Ejercicio 2: Crear multiples procesos
 
-Completar el programa [`mfork.c`](mfork.c) para que cree *n* procesos hijos:
+El programa [`mfork.c`](mfork.c) debe crear varios procesos hijos que duermen durante el número de segundos indicado. Por ejemplo:
 
-* El número *n* debe ser indicado como parámetro en la línea de comandos.
-* Cada proceso hijo debe tener asignado un _id_ único, que es un número entero. El primer hijo creado debe tener el _id_ 1, el segundo el _id_ 2 y así sucesivamente.
-* Cada proceso hijo debe imprimir por la salida estándar su *identificador de proceso* (PID) y su _id_. Para obtener el PID emplear la llamada al sistema [`getpid()`](http://man7.org/linux/man-pages/man2/getpid.2.html).
-* Cada proceso debe esperar un número aleatorio de segundos, no mayor a 10, antes de terminar. Para que el proceso se suspenda ese número de segundos, utilizar la función [`sleep()`](http://man7.org/linux/man-pages/man3/sleep.3.html).
-* Cada proceso hijo debe finalizar con la llamada al sistema [`exit()`](http://man7.org/linux/man-pages/man2/exit.3.html). Como parámetro debe utilizar el número de segundos que espero.
+```bash
+$ bin/mfork 3 5 8
+```
+
+debe crear 3 procesos hijos, que duermen 3, 5 y 8 segundos respectivamente. El proceso padre debe esperar a que todos los procesos hijos finalicen.
+
+* Cada proceso hijo debe tener asignado un entero _id_ único. El primer hijo creado debe tener el _id_ 1, el segundo el _id_ 2 y así sucesivamente.
+* Cada proceso hijo debe imprimir por la salida estándar: `"%d: id %d, duermo %d segundos\n"`, indicando el *identificador del proceso* (PID), el _id_ y cuantos segundos va a dormir. Para obtener el PID usar la llamada al sistema [`getpid()`](http://man7.org/linux/man-pages/man2/getpid.2.html).
+* Para que el proceso se suspenda el número de segundos indicado, utilizar la función [`sleep()`](http://man7.org/linux/man-pages/man3/sleep.3.html).
 * El proceso padre debe esperar a que todos sus procesos hijos finalicen. Utilizar la llamada al sistema [`waitpid()`](http://man7.org/linux/man-pages/man2/waitpid.2.html) para esperar a que los procesos hijos terminen.
 * El proceso padre debe imprimir cuantos segundos durmió cada proceso hijo. Este dato se obtiene mediante `waitpid()`.
 
-Por ejemplo, si se ejecuta el programa indicando que se creen 3 procesos hijo, debe obtenerse una salida similar a la siguiente:
+El resultado tendría que ser el siguiente:
 
 ```bash
-$ bin/mfork 3
-Hijo 3431: id 1
-Hijo 3434: id 2
-Hijo 3432: id 3
-Hijo 3434 durmió 4 segundos.
-Hijo 3432 durmió 2 segundos.
-Hijo 3431 durmió 7 segundos.
-mfork: todos los hijos terminaron.
+$ bin/mfork 3 5 8
+50290: id 1, duermo 3 segundos
+50292: id 3, duermo 8 segundos
+50291: id 2, duermo 5 segundos
+Todos los hijos terminaron.
 $
 ```
+
+Ejecutar `make check` para verificar la solución.
 
 ## Ejercicio 3: Ejecutar un programa
 
@@ -76,7 +79,7 @@ En esta parte del laboratorio se agregan varias funcionalidades al intérprete d
 
 Implementar la ejecución de comandos. El parser del intérprete ya genera una estructura `execcmd` que contiene el comando a ejecutar y los parámetros que se le hayan indicado. Deben completar el caso `' '` en la función `runcmd()`. Para ejecutar el comando, utilizar la llamada a sistema [`execv()`](http://man7.org/linux/man-pages/man3/exec.3.html). Se debe imprimir un mensaje de error si `execv()` falla, utilizando la función [`perror()`](http://man7.org/linux/man-pages/man3/perror.3.html).
 
-### 4.1: Redirección de E/S
+### 4.2: Redirección de E/S
 
 Implementar redirección de E/S mediante los operadores `<` y `>`, de manera que el shell permita ejecutar comandos como:
 
@@ -89,7 +92,7 @@ $
 
 El parser implementado en el shell ya reconoce estos operadores, y genera una estructura `redircmd` con los datos necesarios para implementar la redirección. Deben completar el código necesario en la función `runcmd()`. Consultar las llamadas al sistema [`open()`](http://man7.org/linux/man-pages/man2/open.2.html) y [`close()`](http://man7.org/linux/man-pages/man2/close.2.html). Imprimir un mensaje de error si alguna de las llamadas al sistema empleadas falla con [`perror()`](http://man7.org/linux/man-pages/man3/perror.3.html). Verificar los permisos con los que se crea el archivo.
 
-### 4.1: Tuberías (pipes)
+### 4.3: Tuberías (pipes)
 
 Implementar soporte para el uso de tuberías (_pipes_), para poder ejecutar un comando como:
 
