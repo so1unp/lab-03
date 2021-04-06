@@ -11,20 +11,22 @@ En este laboratorio vamos a ver las llamadas al sistema relacionadas con proceso
 El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un archivo y dos cadenas:
 
 ```sh
-$ bin/fork hola.txt cadena1 cadena2
+$ bin/fork hola.txt string1 string2
 ```
 
-El programa debe abrir el archivo indicado (o crearlo si no existe, con permisos `0644`) en modo `O_APPEND`. Luego, debe crear un proceso hijo que escriba en el archivo la primer cadena. Utilizar para esto la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html). El proceso padre debe esperar a que el proceso hijo finalice y luego escribir la segunda cadena en el archivo. Usar la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) para esperar la finalización del proceso hijo.
+El programa debe abrir el archivo indicado en modo `O_APPEND`. Si el archivo no existe, debe crearlo con permisos `0644`. Luego, debe crear un proceso hijo que escribe en el archivo `Hijo: string2`, donde `string2` es el tercer parámetro. Para crear el proceso hijo, utilizar la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html). El proceso padre debe esperar a que el proceso hijo finalice y luego escribir `Padre: string1` en el archivo. Usar la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) para esperar la finalización del proceso hijo.
 
 Una ejecución de ejemplo sería:
 
 ```sh
-$ bin/fork hola.txt cadena1 cadena2
+$ bin/fork hola.txt hola mundo
 $ cat hola.txt
-Hijo: cadena1 
-Padre: cadena2 
+Hijo: mundo
+Padre: hola
 $
 ```
+
+Usar el script `test.sh` para verificar la ejecución del programa.
 
 ## Ejercicio 2: Crear multiples procesos
 
