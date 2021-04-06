@@ -26,7 +26,7 @@ Padre: hola
 $
 ```
 
-Usar el script `test.sh` para verificar la ejecución del programa.
+Ejecutar `make check` para verificar la ejecución del programa.
 
 ## Ejercicio 2: Crear multiples procesos
 
