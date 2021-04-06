@@ -26,7 +26,7 @@ Padre: hola
 $
 ```
 
-Ejecutar `make check` para verificar la ejecución del programa.
+Ejecutar `make check` para verificar la solución.
 
 ## Ejercicio 2: Crear multiples procesos
 
@@ -56,15 +56,17 @@ $
 
 ## Ejercicio 3: Ejecutar un programa
 
-Completar el programa [`exec.c`](exec.c) para que, desde un proceso hijo, ejecute el programa indicado. Para esto, utilizar la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Por ejemplo:
+Completar el programa [`exec.c`](exec.c) para que, desde un proceso hijo, ejecute el programa indicado como parámetro. Para esto, utilizar la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). 
+
+Por ejemplo, para ejecutar el comando `ls -h`:
 
 ```sh
 $ bin/exec ls -lh
 ```
 
-Debe ejecutar el comando `ls -lh`. El proceso padre debe esperar a que termine de ejecutar el comando indicado.
+El proceso padre debe esperar a que termine de ejecutar el comando indicado. Además, el valor de retorno del proceso padre debe ser el mismo que el retornado por el proceso hijo.
 
-El proceso padre debe imprimir el resultado retornado por la ejecución del programa indicado por el usuario y si es posible si finalizo correctamente o mediante un error.
+Ejecutar `make check` para verificar la solución.
 
 ## Ejercicio 4: Interprete de comandos
 
