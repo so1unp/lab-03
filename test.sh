@@ -112,7 +112,34 @@ else
 fi
 
 if [ -f "bin/mfork" ]; then
-    printf "...\n"
+    printf "Testing: bin/mfork\n"
+
+    printf "\tProbando que verifique argumentos: "
+    bin/mfork > /dev/null 2>&1
+    if [ $(echo $?) != 0 ]; then
+        printf "Ok\n"
+        mfork1=true
+    else
+        printf "Fallo\n"
+        mfork1=false
+    fi
+
+    printf "\tVerificando número de procesos: "
+    result=$(bin/mfork 1 2 3 > mfork.test.txt 2>/dev/null)
+    line_count=$(wc -l mfork.test.txt | awk '{print $1}')
+    if [ "$line_count" = "4" ]; then
+        printf "Ok\n"
+        mfork2=true
+    else
+        printf "Fallo\n"
+        mfork2=false
+    fi
+
+    rm -f mfork.test.txt > /dev/null 2>&1
+
+    if $mfork1 && $mfork2 ; then
+        mfork_result=true
+    fi
 else
     printf "mfork.c no esta compilado.\n"
 fi
