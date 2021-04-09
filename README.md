@@ -24,7 +24,7 @@ Padre: hola
 $
 ```
 
-Para verificar la solucón, ejecutar `make check`.
+Para verificar la solucón, ejecutar `make test-fork`.
 
 ## Ejercicio 2: Crear multiples procesos
 
@@ -52,7 +52,7 @@ Todos los hijos terminaron.
 $
 ```
 
-Ejecutar `make check` para verificar la solución.
+Ejecutar `make test-mfork` para verificar la solución.
 
 ## Ejercicio 3: Ejecutar un programa
 
@@ -66,7 +66,7 @@ $ bin/exec ls -lh
 
 El proceso padre debe esperar a que termine de ejecutar el comando indicado. Además, el valor de retorno del proceso padre debe ser el mismo que el retornado por el proceso hijo.
 
-Ejecutar `make check` para verificar la solución.
+Ejecutar `make test-exec` para verificar la solución.
 
 ## Ejercicio 4: Interprete de comandos
 
