@@ -4,7 +4,7 @@ En este laboratorio vamos a ver las llamadas al sistema relacionadas con proceso
 
 :bulb: Incluir las respuestas a las preguntas de los ejercicios en un archivo de texto con el nombre `respuestas.txt`.
 
-:date: Fecha de entrega: 16/04
+:date: Fecha de entrega: 21/04
 
 ## Ejercicio 1: Crear un proceso
 
@@ -26,7 +26,7 @@ Padre: hola
 $
 ```
 
-Ejecutar `make check` para verificar la solución.
+Para verificar la solucón, ejecutar `make check`.
 
 ## Ejercicio 2: Crear multiples procesos
 
@@ -105,9 +105,11 @@ El parser ya reconoce el operador `|` y guarda en la estructura `pipecmd` todos 
 
 ## Ejercicio 5: getppid() en xv6
 
-Añadir a _xv6_ la llamada al sistema `getppid()`. Utilizar como guía la llamada al sistema `getpid()`. Agregar también un programa con el que se pruebe el funcionamiento de la llamada al sistema.
+Añadir a _xv6_ la llamada al sistema `getppid()`. Utilizar como guía la llamada al sistema `getpid()`. Agregar un programa de nombre `testppid.c` que pruebe el funcionamiento de la llamada al sistema.
 
-Incluir en el archivo `respuestas.txt` una explicación de cómo se implemento la nueva llamada al sistema.
+## Ejercicio 6: contador de procesos en xv6
+
+Añadir a _xv6_ la llamada al sistema `pscnt()`, que retorne el número de procesos actualmente el sistema. El prototipo de la función para el usuario es: `int pscnt(void)`. Añadir un programa de nombre `pscnt.c` para pruebe el funcionamiento de esta llamada al sistema creando procesos hijos.
 
 ---
 
