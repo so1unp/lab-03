@@ -2,8 +2,6 @@
 
 En este laboratorio vamos a ver las llamadas al sistema relacionadas con procesos.
 
-:bulb: Incluir las respuestas a las preguntas de los ejercicios en un archivo de texto con el nombre `respuestas.txt`.
-
 :date: Fecha de entrega: 21/04
 
 ## Ejercicio 1: Crear un proceso
