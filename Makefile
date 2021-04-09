@@ -2,22 +2,25 @@ CC=gcc
 BIN=./bin
 CFLAGS=-Wall -Werror -g
 
-PROG=fork mfork exec sh
-
-LIST=$(addprefix $(BIN)/, $(PROG))
+PROGS=fork mfork exec sh
 
 .PHONY: all
-all: $(LIST)
-
-$(BIN)/%: %.c
-	$(CC) -o $@ $< $(CFLAGS)
+all: $(PROGS)
 
 %: %.c
-	$(CC) -o $(BIN)/$@ $< $(CFLAGS)
+	$(CC) -o $@ $< $(CFLAGS)
 
-check:
-	@./test.sh
+test-exec: exec
+	@./test-exec.sh
+
+test-fork: fork
+	@./test-fork.sh
+
+test-mfork: mfork
+	@./test-mfork.sh
+
+test: test-exec test-fork test-mfork
 
 .PHONY: clean
 clean:
-	rm -f $(LIST)
+	rm -f $(PROGS)
