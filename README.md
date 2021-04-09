@@ -24,7 +24,7 @@ Padre: hola
 $
 ```
 
-Para verificar la solucón, ejecutar `make test-fork`.
+Para verificar la solución, ejecutar `make test-fork`.
 
 ## Ejercicio 2: Crear multiples procesos
 
