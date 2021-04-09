@@ -61,5 +61,7 @@ dkms.conf
 *.swp
 
 # Binarios de los ejercicios
-bin/*
-!bin/.keep
+exec
+fork
+mfork
+sh
