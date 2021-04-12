@@ -74,7 +74,7 @@ En esta parte del laboratorio se agregan varias funcionalidades al intérprete d
 
 ### 4.1: Ejecución de comandos
 
-Implementar la ejecución de comandos. El parser del intérprete ya genera una estructura `execcmd` que contiene el comando a ejecutar y los parámetros que se le hayan indicado. Deben completar el caso `' '` en la función `runcmd()`. Para ejecutar el comando, utilizar la llamada a sistema [`execv()`](http://man7.org/linux/man-pages/man3/exec.3.html). Se debe imprimir un mensaje de error si `execv()` falla, utilizando la función [`perror()`](http://man7.org/linux/man-pages/man3/perror.3.html).
+Implementar la ejecución de comandos. El parser del intérprete ya genera una estructura `execcmd` que contiene el comando a ejecutar y los parámetros que se le hayan indicado. Deben completar el caso `' '` en la función `runcmd()`. Para ejecutar el comando, utilizar la llamada a sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Se debe imprimir un mensaje de error si `exec()` falla, utilizando la función [`perror()`](http://man7.org/linux/man-pages/man3/perror.3.html).
 
 ### 4.2: Redirección de E/S
 
