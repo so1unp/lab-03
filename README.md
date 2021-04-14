@@ -12,12 +12,12 @@ El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un arc
 $ bin/fork hola.txt string1 string2
 ```
 
-El programa debe abrir el archivo indicado en modo `O_APPEND`. Si el archivo no existe, debe crearlo con permisos `0644`. Luego, debe crear un proceso hijo que escribe en el archivo `Hijo: string2`, donde `string2` es el tercer parámetro. Para crear el proceso hijo, utilizar la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html). El proceso padre debe esperar a que el proceso hijo finalice y luego escribir `Padre: string1` en el archivo. Usar la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) para esperar la finalización del proceso hijo.
+El programa debe abrir el archivo indicado en modo `O_APPEND`. Si el archivo no existe, debe crearlo con permisos `0644`. Luego, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html) debe crear un proceso hijo que escribe en el archivo `Hijo: string2`. El proceso padre debe esperar a que el proceso hijo finalice, usando la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) y luego escribir `Padre: string1` en el archivo.
 
 Una ejecución de ejemplo sería:
 
 ```sh
-$ bin/fork hola.txt hola mundo
+$ ./fork hola.txt hola mundo
 $ cat hola.txt
 Hijo: mundo
 Padre: hola
@@ -28,7 +28,7 @@ Para verificar la solución, ejecutar `make test-fork`.
 
 ## Ejercicio 2: Crear multiples procesos
 
-El programa [`mfork.c`](mfork.c) debe crear varios procesos hijos que duermen durante el número de segundos indicado. Por ejemplo:
+El programa [`mfork.c`](mfork.c) debe crear varios procesos hijos, cada uno de los cuales duerme durante el número de segundos indicado. Por ejemplo:
 
 ```bash
 $ bin/mfork 3 5 8
@@ -44,7 +44,7 @@ debe crear 3 procesos hijos, que duermen 3, 5 y 8 segundos respectivamente. El p
 El resultado tendría que ser el siguiente:
 
 ```bash
-$ bin/mfork 3 5 8
+$ ./mfork 3 5 8
 50290: id 1, duermo 3 segundos
 50292: id 3, duermo 8 segundos
 50291: id 2, duermo 5 segundos
@@ -61,7 +61,7 @@ Completar el programa [`exec.c`](exec.c) para que, desde un proceso hijo, ejecut
 Por ejemplo, para ejecutar el comando `ls -h`:
 
 ```sh
-$ bin/exec ls -lh
+$ ./exec ls -lh
 ```
 
 El proceso padre debe esperar a que termine de ejecutar el comando indicado. Además, el valor de retorno del proceso padre debe ser el mismo que el retornado por el proceso hijo.
@@ -70,7 +70,7 @@ Ejecutar `make test-exec` para verificar la solución.
 
 ## Ejercicio 4: Interprete de comandos
 
-En esta parte del laboratorio se agregan varias funcionalidades al intérprete de comandos [`sh.c`](sh.c) (tomado del curso [_6.828 Operating Systems Engineering_](https://pdos.csail.mit.edu/6.828/) del MIT).
+En esta parte del laboratorio se agregan varias funcionalidades al intérprete de comandos [`sh.c`](sh.c) (tomado del curso [_6.828 Operating Systems Engineering_](https://pdos.csail.mit.edu/6.828/) del MIT). Pasa salir del interprete de comandos utilizar `^C`.
 
 ### 4.1: Ejecución de comandos
 
