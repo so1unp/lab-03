@@ -54,7 +54,7 @@ Para verificar que el programa cumple todos los puntos del ejercicio, ejecutar `
 
 ## Ejercicio 3: Ejecutar un programa
 
-Completar el programa [`exec.c`](exec.c) para que, desde un proceso hijo, ejecute el programa indicado como parámetro. Para esto, utilizar la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). 
+Completar el programa [`exec.c`](exec.c) para que, desde un proceso hijo, se ejecute el programa indicado mediante el parámetro. Para esto, utilizar la llamada al sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). 
 
 Por ejemplo, para ejecutar el comando `ls -h`:
 
@@ -62,9 +62,9 @@ Por ejemplo, para ejecutar el comando `ls -h`:
 $ ./exec ls -lh
 ```
 
-El proceso padre debe esperar a que termine de ejecutar el comando indicado. Además, el valor de retorno del proceso padre debe ser el mismo que el retornado por el proceso hijo.
+El proceso padre debe esperar a que el proceso hijo termine de ejecutar el comando indicado. Además, el valor de retorno del proceso padre debe ser el mismo que el retornado por el proceso hijo.
 
-Ejecutar `make test-exec` para verificar la solución.
+Para verificar que el programa cumple todos los puntos del ejercicio, ejecutar `make test-exec`.
 
 ## Ejercicio 4: Interprete de comandos
 
