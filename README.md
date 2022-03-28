@@ -10,9 +10,9 @@ El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un arc
 $ bin/fork hola.txt string1 string2
 ```
 
-El programa debe abrir el archivo indicado en modo `O_APPEND`. Si el archivo no existe, debe crearlo con permisos `0644`. Luego, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html) debe crear un proceso hijo que escribe en el archivo `Hijo: string2`. El proceso padre debe esperar a que el proceso hijo finalice, usando la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) y luego escribir `Padre: string1` en el archivo.
+El programa debe abrir el archivo indicado en modo `O_APPEND`. Si el archivo no existe, debe crearlo con permisos `0644`. Luego, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html) debe crear un proceso hijo que escribe en el archivo la cadena `Hijo: string2`. El proceso padre debe esperar a que el proceso hijo finalice, usando la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) y luego escribir la cadena `Padre: string1` en el archivo.
 
-Una ejecución de ejemplo sería:
+Un ejemplo de ejecución de ejemplo:
 
 ```sh
 $ ./fork hola.txt hola mundo
@@ -22,7 +22,7 @@ Padre: hola
 $
 ```
 
-Para verificar la solución, ejecutar `make test-fork`.
+Para verificar que el programa cumple todos los puntos del ejercicio, ejecutar `make test-fork`.
 
 ## Ejercicio 2: Crear multiples procesos
 
