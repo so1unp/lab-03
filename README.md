@@ -2,8 +2,6 @@
 
 En este laboratorio vamos a ver las llamadas al sistema relacionadas con procesos.
 
-:date: Fecha de entrega: 21/04
-
 ## Ejercicio 1: Crear un proceso
 
 El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un archivo y dos cadenas:
