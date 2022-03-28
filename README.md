@@ -103,7 +103,7 @@ El parser ya reconoce el operador `|` y guarda en la estructura `pipecmd` todos 
 
 Añadir a _xv6_ la llamada al sistema `getppid()`. Utilizar como guía la llamada al sistema `getpid()`. Agregar un programa de nombre `testppid.c` que pruebe el funcionamiento de la llamada al sistema.
 
-## Ejercicio 6: contador de procesos en xv6
+## Ejercicio 6 (OPCIONAL): contador de procesos en xv6
 
 Añadir a _xv6_ la llamada al sistema `pscnt()`, que retorne el número de procesos actualmente el sistema. El prototipo de la función para el usuario es: `int pscnt(void)`. Añadir un programa de nombre `pscnt.c` para pruebe el funcionamiento de esta llamada al sistema creando procesos hijos.
 
