@@ -35,22 +35,22 @@ $ bin/mfork 3 5 8
 debe crear 3 procesos hijos, que duermen 3, 5 y 8 segundos respectivamente. El proceso padre debe esperar a que todos los procesos hijos finalicen.
 
 * Cada proceso hijo debe tener asignado un entero _id_ único. El primer hijo creado debe tener el _id_ 1, el segundo el _id_ 2 y así sucesivamente.
-* Cada proceso hijo debe imprimir por la salida estándar: `"%d: id %d, duermo %d segundos\n"`, indicando el *identificador del proceso* (PID), el _id_ y cuantos segundos va a dormir. Para obtener el PID usar la llamada al sistema [`getpid()`](http://man7.org/linux/man-pages/man2/getpid.2.html).
+* Cada proceso hijo debe imprimir por la salida estándar `"%d: id %d, duermo %d segundos\n"`, indicando el *identificador del proceso* (PID), su _id_ y cuantos segundos va a dormir. Para obtener el PID usar la llamada al sistema [`getpid()`](http://man7.org/linux/man-pages/man2/getpid.2.html).
 * Para que el proceso se suspenda el número de segundos indicado, utilizar la función [`sleep()`](http://man7.org/linux/man-pages/man3/sleep.3.html).
-* El proceso padre debe esperar a que todos sus procesos hijos finalicen e imprimir un mensaje. Utilizar la llamada al sistema [`waitpid()`](http://man7.org/linux/man-pages/man2/waitpid.2.html) para esperar a que los procesos hijos terminen.
+* El proceso padre debe esperar a que todos sus procesos hijos finalicen y luego imprimir el mensaje "Done!". Utilizar la llamada al sistema [`waitpid()`](http://man7.org/linux/man-pages/man2/waitpid.2.html) para esperar a que los procesos hijos terminen.
 
-El resultado tendría que ser el siguiente:
+Comoe ejemplo, el resultado de ejecutar `./mfork 3 5 8` tendría que ser parecido a el siguiente:
 
 ```bash
 $ ./mfork 3 5 8
 50290: id 1, duermo 3 segundos
 50292: id 3, duermo 8 segundos
 50291: id 2, duermo 5 segundos
-Todos los hijos terminaron.
+Done!
 $
 ```
 
-Ejecutar `make test-mfork` para verificar la solución.
+Para verificar que el programa cumple todos los puntos del ejercicio, ejecutar `make test-mfork`.
 
 ## Ejercicio 3: Ejecutar un programa
 
