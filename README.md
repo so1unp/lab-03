@@ -68,7 +68,7 @@ Para verificar que el programa cumple todos los puntos del ejercicio, ejecutar `
 
 ## Ejercicio 4: Interprete de comandos
 
-En esta parte del laboratorio se agregan varias funcionalidades al intérprete de comandos [`sh.c`](sh.c) (tomado del curso [_6.828 Operating Systems Engineering_](https://pdos.csail.mit.edu/6.828/) del MIT). Pasa salir del interprete de comandos utilizar `^C`.
+En esta parte del laboratorio se agregan varias funcionalidades al intérprete de comandos [`sh.c`](sh.c) (tomado del curso [_6.828 Operating Systems Engineering_](https://pdos.csail.mit.edu/6.828/) del MIT). Pasa salir del interprete de comandos teclear `^C`.
 
 ### 4.1: Ejecución de comandos
 
