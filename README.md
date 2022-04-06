@@ -39,7 +39,7 @@ debe crear 3 procesos hijos, que duermen 3, 5 y 8 segundos respectivamente. El p
 * Para que el proceso se suspenda el número de segundos indicado, utilizar la función [`sleep()`](http://man7.org/linux/man-pages/man3/sleep.3.html).
 * El proceso padre debe esperar a que todos sus procesos hijos finalicen y luego imprimir el mensaje `Done!`. Utilizar la llamada al sistema [`waitpid()`](http://man7.org/linux/man-pages/man2/waitpid.2.html) para esperar a que los procesos hijos terminen.
 
-Comoe ejemplo, el resultado de ejecutar `./mfork 3 5 8` tendría que ser parecido a el siguiente:
+Como ejemplo, el resultado de ejecutar `./mfork 3 5 8` tendría que ser similar al siguiente:
 
 ```bash
 $ ./mfork 3 5 8
@@ -72,7 +72,7 @@ En esta parte del laboratorio se agregan varias funcionalidades al intérprete d
 
 ### 4.1: Ejecución de comandos
 
-Implementar la ejecución de comandos. El parser del intérprete ya genera una estructura `execcmd` que contiene el comando a ejecutar y los parámetros que se le hayan indicado. Deben completar el caso `' '` en la función `runcmd()`. Para ejecutar el comando, utilizar la llamada a sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Se debe imprimir un mensaje de error si `exec()` falla, utilizando la función [`perror()`](http://man7.org/linux/man-pages/man3/perror.3.html).
+Implementar la ejecución de comandos. El parser del intérprete genera una estructura `execcmd` que contiene el comando a ejecutar y sus parámetros si los hubiera. Para implementar la ejecución de comandos, deben completar el caso `' '` en la función `runcmd()`, utilizando la llamada a sistema [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Se debe imprimir un mensaje de error si `exec()` falla, utilizando la función [`perror()`](http://man7.org/linux/man-pages/man3/perror.3.html).
 
 ### 4.2: Redirección de E/S
 
