@@ -11,13 +11,13 @@ all: $(PROGS)
 	$(CC) -o $@ $< $(CFLAGS)
 
 test-exec: exec
-	@./test-exec.sh
+	@./test-exec.sh ||:
 
 test-fork: fork
-	@./test-fork.sh
+	@./test-fork.sh ||:
 
 test-mfork: mfork
-	@./test-mfork.sh
+	@./test-mfork.sh ||:
 
 test: test-exec test-fork test-mfork
 
