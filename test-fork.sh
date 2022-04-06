@@ -59,9 +59,12 @@ if [ -f "./fork" ]; then
 
     if $fork0 && $fork1 && $fork2 && $fork3 && $fork4 ; then
         printf "Todos las pruebas pasaron exitosamente.\n"
+        exit 0
     else
         printf "Algunas pruebas fallaron.\n"
+        exit 1
     fi
 else
     printf "Error! El programa fork.c parece no estar compilado.\n"
+    exit 1
 fi
