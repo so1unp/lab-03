@@ -13,14 +13,14 @@ if [ -f "./mfork" ]; then
         mfork1=false
     fi
 
-    printf "\tVerificando número de procesos creados: "
+    printf "\tVerificando ejecucion de ./mfork 1 2 3: "
     result=$(./mfork 1 2 3 > mfork.test.txt 2>/dev/null)
     line_count=$(wc -l mfork.test.txt | awk '{print $1}')
     if [ "$line_count" = "4" ]; then
         printf "Ok!\n"
         mfork2=true
     else
-        printf "Error!\n"
+        printf "Error! Se esperaban 4 lineas, se obtuvo: $line_count\n"
         mfork2=false
     fi
 
