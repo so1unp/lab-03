@@ -10,7 +10,7 @@ El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un arc
 $ bin/fork hola.txt string1 string2
 ```
 
-El programa debe abrir el archivo indicado en modo `O_APPEND`. Si el archivo no existe, debe crearlo con permisos `0644`. Luego, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html) debe crear un proceso hijo que escribe en el archivo la cadena `Hijo: string2`. El proceso padre debe esperar a que el proceso hijo finalice, usando la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) y luego escribir la cadena `Padre: string1` en el archivo.
+El programa debe abrir el archivo indicado en modo `O_APPEND` (para agregar contenido al final). Si el archivo no existe, debe crearlo con permisos `0644`. Luego, utilizando la llamada al sistema [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html) debe crear un proceso hijo que escribe en el archivo la cadena `Hijo: string2`. El proceso padre debe esperar a que el proceso hijo finalice, usando la llamada al sistema [`wait()`](http://man7.org/linux/man-pages/man2/wait.2.html) y luego escribir la cadena `Padre: string1` en el archivo.
 
 Un ejemplo de ejecución:
 
