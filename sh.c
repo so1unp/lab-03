@@ -106,10 +106,12 @@ int main(void)
             // Clumsy but will have to do for now.
             // Chdir has no effect on the parent if run in the child.
             buf[strlen(buf) - 1] = 0;	// chop \n
-            if (chdir(buf + 3) < 0)
-            fprintf(stderr, "cannot cd %s\n", buf + 3);
+            if (chdir(buf + 3) < 0) {
+                fprintf(stderr, "cannot cd %s\n", buf + 3);
+            }
             continue;
         }
+
         if (fork1() == 0) {
             runcmd(parsecmd(buf));
         }
