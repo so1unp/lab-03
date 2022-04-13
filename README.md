@@ -6,7 +6,7 @@ En este laboratorio vamos a ver las llamadas al sistema relacionadas con proceso
 
 El programa [`fork.c`](fork.c) debe recibir como parámetros el nombre de un archivo y dos cadenas:
 
-```sh
+```
 $ bin/fork hola.txt string1 string2
 ```
 
@@ -14,7 +14,7 @@ El programa debe abrir el archivo indicado en modo `O_APPEND` (para agregar cont
 
 Un ejemplo de ejecución:
 
-```sh
+```
 $ ./fork hola.txt hola mundo
 $ cat hola.txt
 Hijo: mundo
@@ -28,7 +28,7 @@ Para verificar que el programa cumple todos los puntos del ejercicio, ejecutar `
 
 El programa [`mfork.c`](mfork.c) debe crear varios procesos hijos, cada uno de los cuales duerme durante el número de segundos indicado. Por ejemplo:
 
-```bash
+```
 $ bin/mfork 3 5 8
 ```
 
@@ -41,7 +41,7 @@ debe crear 3 procesos hijos, que duermen 3, 5 y 8 segundos respectivamente. El p
 
 Como ejemplo, el resultado de ejecutar `./mfork 3 5 8` tendría que ser similar al siguiente:
 
-```bash
+```
 $ ./mfork 3 5 8
 50290: id 1, duermo 3 segundos
 50292: id 3, duermo 8 segundos
@@ -58,7 +58,7 @@ Completar el programa [`exec.c`](exec.c) para que, desde un proceso hijo, se eje
 
 Por ejemplo, para ejecutar el comando `ls -h`:
 
-```sh
+```
 $ ./exec ls -lh
 ```
 
@@ -78,7 +78,7 @@ Implementar la ejecución de comandos. El parser del intérprete genera una estr
 
 Implementar redirección de E/S mediante los operadores `<` y `>`, de manera que el shell permita ejecutar comandos como:
 
-```bash
+```
 $ echo "sistemas operativos" > x.txt
 $ cat < x.txt
 sistemas operativos
