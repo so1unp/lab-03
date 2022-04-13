@@ -10,6 +10,10 @@ all: $(PROGS)
 %: %.c
 	$(CC) -o $@ $< $(CFLAGS)
 
+docs:
+	pandoc -o README.txt -f gfm README.md
+	pandoc -o README.html -f gfm README.md
+
 test-exec: exec
 	@./test-exec.sh ||:
 
