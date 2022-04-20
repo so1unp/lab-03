@@ -13,8 +13,8 @@ if [ -f "./mfork" ]; then
         mfork1=false
     fi
 
-    printf "\tVerificando ejecucion de ./mfork 1 2 3: "
-    result=$(./mfork 1 2 3 > mfork.test.txt 2>/dev/null)
+    printf "\tVerificando ejecucion de ./mfork 10 3 1: "
+    result=$(./mfork 10 3 1 > mfork.test.txt 2>/dev/null)
     line_count=$(wc -l mfork.test.txt | awk '{print $1}')
     if [ "$line_count" = "4" ]; then
         printf "Ok!\n"
